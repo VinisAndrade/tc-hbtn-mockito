@@ -12,20 +12,10 @@ class CalculadoraTest {
     void testSomar() {
         
         ServicoMatematico servicoMock = mock(ServicoMatematico.class);
-
-        
         when(servicoMock.somar(2, 3)).thenReturn(5);
-
-        
         Calculadora calculadora = new Calculadora(servicoMock);
-
-        
         int resultado = calculadora.somar(2, 3);
-
-        
         assertEquals(5, resultado);
-
-
         verify(servicoMock).somar(2, 3);
     }
 }
